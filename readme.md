@@ -20,12 +20,15 @@ alternatively you can download a [release](https://github.com/oddballteam/ec2ssm
 ec2ssm
 ```
 
-run `ec2ssm` and select Web or CLI. Then select an account using the arrow keys.
-
+run `ec2ssm` and select the instance you would like to connect to using the arrow keys.
 
 ### Issues
 This is a new tool and likely will have issues. 
 You can message `@Doug Moore` if you run into an issue.
+There is no validity checking on if a session CAN be made. 
+So, before submitting first attempt to make a ssm session without `ec2ssm`
+
+This can be attempted with `aws ssm start-session --target i-INSTANCE_ID_HERE`
 
 ### Build
 builds are automated from GitHub Actions. A token with repo write permission is required for GoRelease to work.

@@ -81,6 +81,8 @@ func main() {
 	check(err)
 	fmt.Println("started session", string(*ses.SessionId))
 
+	// I followed the example for the rest this
+	// https://github.com/mmmorris1975/aws-runas/blob/master/cli/ssm_cmd.go
 	var inJ, outJ []byte
 	outJ, err = json.Marshal(ses)
 	check(err)
