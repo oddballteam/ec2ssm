@@ -2,7 +2,7 @@
 
 - vpn access
 - configured AWS CLI
-- [AWS Session Manager plugin for AWS CLI](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html), can be verified with a `session-manager-plugin` command.
+- [AWS Session Manager plugin for AWS CLI](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html), can be verified with the command: `session-manager-plugin`
 
 # Installation
 > assuming you have ~/go/bin in your path

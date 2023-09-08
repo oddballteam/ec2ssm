@@ -1,4 +1,4 @@
-module main
+module github.com/oddballteam/ec2ssm
 
 go 1.21.0
 
