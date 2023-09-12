@@ -3,10 +3,9 @@
 - vpn access
 - configured AWS CLI
 - [AWS Session Manager plugin for AWS CLI](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html), can be verified with the command: `session-manager-plugin`
-
+- [go installed](https://go.dev/doc/install), make sure to have ~/go/bin in your path
+- 
 # Installation
-> assuming you have ~/go/bin in your path
-
 ```
 go install github.com/oddballteam/ec2ssm@latest
 ```
