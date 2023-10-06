@@ -6,7 +6,9 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"os/signal"
 	"strings"
+	"syscall"
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/aws/aws-sdk-go-v2/config"
@@ -99,6 +101,17 @@ func main() {
 	c.Stdin = os.Stdin
 	c.Stdout = os.Stdout
 	c.Stderr = os.Stderr
+
+	// ignore ctrl + c
+	signalCh := make(chan os.Signal, 1)
+	signal.Notify(signalCh, os.Interrupt, syscall.SIGINT)
+
+	go func() {
+		for range signalCh {
+			fmt.Println("Ctrl+C is disabled during the SSM session. Use 'exit' to terminate the session.")
+		}
+	}()
+
 	c.Run()
 
 	term, err := client.TerminateSession(context.TODO(), &ssm.TerminateSessionInput{
